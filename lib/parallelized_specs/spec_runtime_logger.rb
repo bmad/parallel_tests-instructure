@@ -1,6 +1,6 @@
-require 'parallel_specs/spec_logger_base'
+require 'parallelized_specs/spec_logger_base'
 
-class ParallelSpecs::SpecRuntimeLogger < ParallelSpecs::SpecLoggerBase
+class ParallelizedSpecs::SpecRuntimeLogger < ParallelizedSpecs::SpecLoggerBase
   def initialize(*args)
     super
     @example_times = Hash.new(0)

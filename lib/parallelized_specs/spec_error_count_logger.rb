@@ -1,7 +1,7 @@
-require 'parallel_specs'
+require 'parallelized_specs'
 require File.join(File.dirname(__FILE__), 'spec_logger_base')
 
-class ParallelSpecs::SpecErrorCountLogger < ParallelSpecs::SpecLoggerBase
+class ParallelizedSpecs::SpecErrorCountLogger < ParallelizedSpecs::SpecLoggerBase
   def initialize(options, output=nil)
     super
     @passed_examples = []

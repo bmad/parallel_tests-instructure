@@ -1,4 +1,4 @@
-class ParallelTests
+class ParallelizedSpecs
   class Grouper
     def self.in_groups(items, num_groups)
       groups = Array.new(num_groups){ [] }
@@ -12,9 +12,8 @@ class ParallelTests
       groups.map!(&:sort!)
     end
 
-    def self.in_even_groups_by_size(items_with_sizes, num_groups, options={})
+    def self.in_even_groups_by_size(items_with_sizes, num_groups, options)
       groups = Array.new(num_groups){{:items => [], :size => 0}}
-
       # add all files that should run in a single process to one group
       (options[:single_process]||[]).each do |pattern|
         matched, items_with_sizes = items_with_sizes.partition{|item, size| item =~ pattern }
